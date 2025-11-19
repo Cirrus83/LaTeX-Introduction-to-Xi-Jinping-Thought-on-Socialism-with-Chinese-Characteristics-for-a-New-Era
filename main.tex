@@ -1,0 +1,122 @@
+% 习概课程论文 LaTeX高仿Word o(^▽^)o 20251119
+% 注意：由于ctexart的特性，中文段落内的空格需要用"\ "（强制空格）键入
+% PKUTeX会使用Fandol系列字体，可能与Word默认的字体有些许不同
+\documentclass[UTF8,12pt,a4paper]{ctexart}
+\usepackage[top=2.5cm, bottom=2.5cm, left=3.2cm, right=3.2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{stackengine}
+\usepackage{anyfontsize}
+\usepackage{footmisc}
+\usepackage{setspace}
+\usepackage{xeCJK}
+\onehalfspacing  % 全文1.5倍行距
+
+\ctexset{% 不想写注释
+    section = {
+        format = \zihao{4}\heiti\raggedright\bfseries,
+        name = {},
+        number = \chinese{section}、,
+        aftername = \hspace{0.5em},
+        beforeskip = 3.5ex plus 1ex minus .2ex,
+        afterskip = 2.3ex plus .2ex
+    },
+    subsection = {
+        format = \zihao{4}\heiti\raggedright\selectfont, % 去掉\bfseries就是不加粗
+        name = {},
+        number = （\chinese{subsection}）, % 中文数字加括号
+        aftername = \hspace{0.5em},
+        beforeskip = 2.5ex plus 1ex minus .2ex,
+        afterskip = 1.8ex plus .2ex
+    }
+}
+% 若本地编译，且使用macOS，以下内容请去除注释，否则文档会默认使用华文系列字体（该部分对于Windows尚未调试）
+% \setCJKmainfont{Songti SC}[
+%     BoldFont = * Bold,  
+%     AutoFakeBold = false,
+%     AutoFakeSlant = 0.2  % 启用伪斜体，0.2是倾斜角度
+% ]
+% \newCJKfontfamily{\songtisc}{Songti SC}
+% \newCJKfontfamily{\simhei}{SimHei}[
+%     AutoFakeBold = 2.0
+% ]
+% \newCJKfontfamily{\kaitisc}[
+%     UprightFont = * Regular,
+%     BoldFont = * Bold,
+%     AutoFakeBold = false
+% ]{Kaiti SC}
+% \renewcommand{\songti}{\songtisc}
+% \renewcommand{\heiti}{\simhei}
+% \renewcommand{\kaishu}{\kaitisc}
+\renewcommand{\footnotesize}{\zihao{5}}
+
+\begin{document}
+\begin{titlepage}
+    \centering
+    \vspace{2.5cm}
+    
+    \includegraphics[width=0.5\textwidth]{logo_horizontal.eps}\\
+    \vspace{2.5cm}
+    
+    {\zihao{-0}\heiti\textbf{习思想概论课}}\\
+    \vspace{0.5cm}
+    {\zihao{-0}\heiti\textbf{1班课程论文}}\\
+    \vspace{2cm}
+    {\songti\zihao{2}题目：\stackon{\rule{12cm}{0.6pt}}{\centering\heiti\zihao{3}论文标题}}\\
+    \vspace{3cm}
+    
+    \noindent\centering\begin{minipage}{0.85\textwidth}
+        \zihao{-3}\selectfont\heiti
+        花名册序号：\stackon{\rule{9cm}{0.6pt}}{\centering\fangsong\zihao{3} 键入} 
+        \vspace{15pt}
+        
+        \:\;姓\qquad 名：\:\;\stackon{\rule{9cm}{0.6pt}}{\centering\fangsong\zihao{3} 键入} 
+        \vspace{15pt}
+        
+        \:\;学\qquad 号：\:\;\stackon{\rule{9cm}{0.6pt}}{\centering\fangsong\zihao{3} 键入} 
+        \vspace{15pt}
+        
+        \:\;院\qquad 系：\:\;\stackon{\rule{9cm}{0.6pt}}{\centering\fangsong\zihao{3} 数学科学学院} 
+        \vspace{15pt}
+        
+        \:\;主管老师：\:\;\stackon{\rule{9cm}{0.6pt}}{\centering\fangsong\zihao{3} 键入} 
+        \vspace{15pt}
+        
+        \:\;助\qquad 教：\:\;\stackon{\rule{9cm}{0.6pt}}{\centering\fangsong\zihao{3} 键入}
+    \end{minipage}
+
+    \vspace{2cm}
+    \zihao{3}{二〇二五\heiti 年\songti 十一\heiti 月}
+    
+    \vfill
+
+\end{titlepage}
+\noindent\begin{minipage}{1\textwidth}
+    \kaishu\zihao{-4}\textbf{\addCJKfontfeatures{AutoFakeBold=2.0}摘要：}这是一段可以自动换行的长文本，因为它不在命令内部，而是在常规的文本环境中。可以自动换行吗？似乎确实可以。\\
+    \textbf{\addCJKfontfeatures{AutoFakeBold=2.0}关键词：}嗷嗷；啊啊
+\end{minipage}
+\section{xx\ 一级标题\ 黑体\ 四号\ 加粗}
+\subsection{xx\ 二级标题\ 黑体\ 四号}
+正文：宋体小四\ 1.5倍行间距\ 段落首行缩进两字符，测试自动换行呜呜呜呜呜呜呜呜呜呜呜呜呜呜。\par
+脚注：宋体五号，例如：\footnote{图书：《习近平谈治国理政》第2卷，外文出版社，2017年版，第112-113页。}
+\footnote{网站：习近平：《xxx》，人民网，x年 x月 x日。}
+\footnote{报纸：人名：《xxx》，《人民日报》，x年 x月 x日。}
+\footnote{期刊：人名：《xxx》，《中国社会科学》，x年第x期，第1-2页。}
+
+% 参考文献（不想写注释）
+\vspace{1cm}
+\noindent\begin{minipage}{\textwidth}
+    \singlespacing
+    \begin{center}
+    {\zihao{3}\heiti\textbf{参考文献}}
+    \end{center}
+    \songti\zihao{5}
+    [1]《习近平谈治国理政》第2卷，外文出版社，2017年版。% 要确保每行之间空一行
+
+    [2]习近平：《xxx》，人民网，x年 x月 x日。
+    
+    [3]人名：《xxx》，《人民日报》，x年 x月 x日。
+
+    [4]人名：《xxx》，《中国社会科学》，x年第x期，第x-x页。
+\end{minipage}
+
+\end{document}
